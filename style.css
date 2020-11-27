@@ -66,3 +66,8 @@ h1, h2, h3 {
 #picture {
   padding : 30px
 }
+
+img {
+  padding: 30px;
+  color: #eee
+}
