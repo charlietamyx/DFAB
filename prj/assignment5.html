@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 5</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Assignment 5, Version control</h1>
+        </div>
+        <div id="content">
+            <div id="nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="assignment1.html">Assignemnt 1</a></li>
+                    <li><a href="assignment2.html">Assignment 2</a></li>
+                    <li><a href="assignment3.html">Assignment 3</a></li>
+                    <li><a href="assignment4.html">Assignment 4</a></li>
+                    <li><a href="assignment5.html" class="selected">Assignment 5</a></li>
+                    <li><a href="assignment6.html">Assignment 6</a></li>
+                    <li><a href="assignment7.html">Assignment 7</a></li>
+                    <li><a href="../docs/about.html">About</a></li>
+                </ul>
+            </div>
+            <div id="main">
+                <div id="main">
+                    <h2>Version Control</h2>
+                    
+                    <h3>Git</h3>
+                    <p>Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific 
+                        xversions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.
+                    </p>
+                    
+                    <h3>Github</h3>
+                    <p>GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+                    </p>
+                    <h3>How to Start a repository on Git and Github</h3>
+                    <table>
+                        <tr>
+                            <td><img src="../images/git_bash.png" width="400px" align="left" padding=100px border = 1px></td>
+                            <td>
+                                <p> There are many tools that one can use to operate git, but I personally prefer git bash 
+                                    as when using git I tend to run into alot of errors(wrong branch, couldnt connect to upstream etc.)
+                                    and some git tools such as github desktop are unable to show these errors and it would take longer
+                                    to debug these issues. 
+                                    <br> Below are the steps and commands that I used when starting a git repository 
+                                </p>
+                            </td>
+                        </tr>
+                    </table> 
+                    <h3>Steps</h3>
+                    <ol>
+                        <li>
+                            Firstly go to <a href="github.com">github</a> and create a new account and install git bash
+                        </li>
+                        <li>
+                            Create a repository and copy the url link of the repository
+                        </li>
+                        <li>
+                            Open Git bash and change directory to your local project by using the code <br>
+                            $ cd C:\Users\...
+                        </li>
+                        <li>
+                            Initialise the local directory as a Git Repo <br>
+                            $ git init
+                        </li>
+                        <li>
+                            Add the files in the new local repository. This stages them for the first commit<br>
+                            $ git add .<br>
+                            Take note that the . stands for everything. So in this case, this command means that git will stage all the changes,
+                            you can add individual files as well
+                        </li>
+                        <li>
+                            Commit the files that you have staged in your local repository <br>
+                            $ git commit -m "any message that you want"
+                            <br> The -m in this line of code stands for message and in the open and close quotations, just type any message
+                            or reminder to label this commit, it could be "first commit" or "finished html file but css is not done". Be sure to 
+                            type something meaningful in case in the future you want to revert back your code!
+                        </li>
+                        <li>
+                            Now we can paste the url you copied in front to tell git where you want to push your files to<br>
+                            $ git remote add origin <i>remote repository URL</i>
+                            <br>Github may ask you to sign in at this point, just follow along and you should be fine!
+                        </li>
+                        <li>
+                            Finally just Push your files and Github should be able to recieve them!<br>
+                            $ git push origin main
+                        </li>
+                    </ol>
+                    
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p>@Copyright 2020</p>
+        </div>
+    </div>
+</body>
+</html>
