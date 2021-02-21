@@ -256,13 +256,74 @@ delay(400);
 <hr>
 
 <p>
-    Updated code with 6 LEDs:
+    After updating the safety distance of the code and adding the 6 LEDs, this is my final code:
 </p>
 
 <code> 
-    
+    #include <Adafruit_NeoPixel.h>
+        #ifdef _AVR_
+         #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+        #endif
+        
+        #define PIN        13
+        #define NUMPIXELS 6 // Popular NeoPixel ring size
+        Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+        
+        const int trigPin = 9;
+        const int echoPin = 10;
+        
+        // defines variables
+        long duration;
+        int distance;
+        int safetyDistance;
+        
+        
+        void setup() {
+        pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+        pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+        Serial.begin(9600); // Starts the serial communication
+        pixels.begin();
+        
+        }
+        
+        
+        void loop() {
+        // Clears the trigPin
+        digitalWrite(trigPin, LOW);
+        delayMicroseconds(2);
+        
+        // Sets the trigPin on HIGH state for 10 micro seconds
+        digitalWrite(trigPin, HIGH);
+        delayMicroseconds(10);
+        digitalWrite(trigPin, LOW);
+        
+        // Reads the echoPin, returns the sound wave travel time in microseconds
+        duration = pulseIn(echoPin, HIGH);
+        
+        // Calculating the distance
+        distance= duration*0.034/2;
+        
+        safetyDistance = distance;
+        
+        if (safetyDistance <= 20){
+          uint32_t red= pixels.Color(255, 0, 0);
+          pixels.fill(red, 0);
+          pixels.show();
+          }
+        else{
+          uint32_t magenta = pixels.Color(255, 0, 255);
+          pixels.fill(magenta, 0);
+          pixels.show();
+          }
+        }
 </code>
 
+<hr>
+
+
+<p>
+    This
+</p>
 
 
             </div>
